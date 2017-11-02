@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     {% if title %}
     <title>{{ title }}</title>
     {% else %}
     <title>Classification Demo</title>
     {% endif %}
-  </head>
-  <body>
+</head>
+<body>
     <img src={{ filename }} width="224" height="224">
-  </body>
+    <br>
+    {% for pred in predictions %}
+    {{ pred.name }} : {{ pred.prob }}
+    <br>
+    {% endfor %}
+    <br>
+</body>
 </html>
