@@ -8,7 +8,6 @@ PORT = '8888'
 def index():
     user = {'nickname': 'Hara'}  # fake user
     return render_template('index.html',
-                           title='Home',
                            user=user)
  
 if __name__ == "__main__":
