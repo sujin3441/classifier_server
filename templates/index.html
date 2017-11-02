@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     {% if title %}
     <title>{{ title }}</title>
     {% else %}
     <title>Classification Demo</title>
     {% endif %}
-  </head>
-  <body>
-    <form action="/predict" method="POST">
-  <fieldset>
-    <legend>Image URL</legend>
-      <input type="text" name="address" value="http://cdn2-www.cattime.com/assets/uploads/gallery/ragdoll/ragdoll-cats-kittens-2.jpg" size="100"><br>
-      <input type="submit" value="Submit">
-  </fieldset>
+</head>
+<body>
+<form action="/predict" method="POST">
+    <fieldset>
+        <legend>Image URL</legend>
+        <input type="text" name="address"
+               value="http://cdn2-www.cattime.com/assets/uploads/gallery/ragdoll/ragdoll-cats-kittens-2.jpg" size="100"><br>
+        <input type="submit" value="Submit">
+    </fieldset>
 </form>
-  </body>
+
+<br><br>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Upload Image</legend>
+        <span class="btn btn-default btn-file">
+        <input type="file" name="image">
+      </span>
+        <input type="submit" value="Upload your image" class="btn btn-primary">
+    </fieldset>
+</form>
+</body>
 </html>
