@@ -2,15 +2,18 @@
 <html>
   <head>
     {% if title %}
-    <title>{{ title }} - microblog</title>
+    <title>{{ title }}</title>
     {% else %}
-    <title>Welcome to microblog</title>
+    <title>Classification Demo</title>
     {% endif %}
   </head>
   <body>
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+    <form action="/predict" method="POST">
+  <fieldset>
+    <legend>Image URL</legend>
+      <input type="text" name="address" value="http://cdn2-www.cattime.com/assets/uploads/gallery/ragdoll/ragdoll-cats-kittens-2.jpg" size="100"><br>
+      <input type="submit" value="Submit">
+  </fieldset>
+</form>
   </body>
 </html>

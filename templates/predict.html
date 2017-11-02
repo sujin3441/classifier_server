@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Classification Demo</title>
+    {% endif %}
+  </head>
+  <body>
+    <img src={{ url_address }} width="224" height="224">
+  </body>
+</html>
